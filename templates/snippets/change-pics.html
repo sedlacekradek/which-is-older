@@ -1,0 +1,47 @@
+<!--
+1) load new picture with sliding animation
+2) updates score
+3) makes sure that modal is closed
+-->
+
+<div class="main-window" id="main-window">
+
+    <!--upper section-->
+    <div class="caption-wrapper text-center">
+        <img class="main-pic" style="animation: 1s ease-out 0s 1 slideInFromRight" src="{{ pic1 }}"
+             hx-get="/check-answer/1"
+             hx-trigger="click"
+             hx-target="#main-window"
+             hx-swap="outerHTML">
+
+        <div id="caption1" class="caption">
+            <p>{{ caption1|safe }}</p>
+        </div>
+    </div>
+
+    <!--timer section-->
+    <div class="progress timer-section">
+        <div class="progress-bar time-bar" role="progressbar" style="width: 100%">
+        </div>
+    </div>
+
+    <!--lower section-->
+    <div class="caption-wrapper text-center">
+        <img class="main-pic" style="animation: 1s ease-out 0s 1 slideInFromRight" src="{{ pic2 }}"
+             hx-get="/check-answer/2"
+             hx-trigger="click"
+             hx-target="#main-window"
+             hx-swap="outerHTML">
+        <div class="caption">
+            <p>{{ caption2|safe }}</p>
+        </div>
+    </div>
+
+    <!--score section-->
+    <div class="score-section" id="score">
+        <p class="current-score">Your score: <span>{{ score }}</span></p>
+    </div>
+
+    <script>document.getElementById("close-modal").click();</script>
+</div>
+

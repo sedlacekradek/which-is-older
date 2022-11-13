@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% include "header.html" %}
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+
+        {% include "menu.html" %}
+
+        <!--main section-->
+        <div class="container-fluid main-window">
+            <div class="row text-center">
+
+                <div class="col-lg-4 col-md-12 col-sm-12 home-col">
+                    <i class="bi bi-bullseye home-icon"></i>
+                    <p class="home-text">Pick category</p>
+                    <h3>Make your guess</h3>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12 home-col">
+                    <i class="bi bi-hand-thumbs-up-fill home-icon"></i>
+                    <p class="home-text">Play the game</p>
+                    <h3>Get points</h3>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12 home-col">
+                    <i class="bi bi-heart-fill home-icon"></i>
+                    <p class="home-text">Never give up</p>
+                    <h3>Gain extra lives</h3>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <!--average score-->
+            <div class="row text-center">
+                <div class="col home-col">
+                    <h2>The average score: {{ average }}</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

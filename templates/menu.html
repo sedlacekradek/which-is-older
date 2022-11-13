@@ -1,0 +1,46 @@
+        <!--sidebar section-->
+        <div class="d-flex flex-column p-3 text-white left-sidebar sidebar-sticky col-lg-3 col-md-3">
+
+            <!--sidebar logo-->
+            <a href="{{ url_for('home') }}" class="d-flex me-md-auto text-white text-decoration-none" id="logo-link">
+                <span class="title"><i class="bi bi-pc-display-horizontal logo-pic"></i>which is older?</span></a>
+            <hr>
+
+            <!--sidebar menu-->
+            <a href="{{ url_for('play', category='games') }}">
+                <div class="sidebar-menu">
+                    <img class="sidebar-pic" src="{{ url_for('static', filename='images/side_panel/games.jpg') }}">
+                    <button type="button" class="btn btn-danger">Games</button>
+                </div>
+            </a>
+
+            <a href="{{ url_for('play', category='gadgets') }}">
+                <div class="sidebar-menu">
+                    <img class="sidebar-pic" src="{{ url_for('static', filename='images/side_panel/gadgets.jpg') }}">
+                    <button type="button" class="btn btn-danger">Gadgets</button>
+                </div>
+            </a>
+
+            <a href="{{ url_for('play', category='movies') }}">
+                <div class="sidebar-menu">
+                    <img class="sidebar-pic" src="{{ url_for('static', filename='images/side_panel/movies.jpg') }}">
+                    <button type="button" class="btn btn-danger">Movies</button>
+                </div>
+            </a>
+
+            <a href="{{ url_for('play', category='brands') }}">
+                <div class="sidebar-menu">
+                    <img class="sidebar-pic" src="{{ url_for('static', filename='images/side_panel/brands.jpg') }}">
+                    <button type="button" class="btn btn-danger">Brands</button>
+                </div>
+            </a>
+            <hr>
+
+            <!--sidebar footer-->
+            <footer>
+                <a href="https://www.facebook.com/sedlacek.radek/"><i class="footer-icon bi bi-facebook"></i></a>
+                <a href="https://github.com/sedlacekradek"><i class="footer-icon bi bi-github"></i></a>
+                <a href="mailto:sedlacek.radek@email.cz"><i class="footer-icon bi bi-envelope-fill"></i></a>
+            </footer>
+
+        </div>

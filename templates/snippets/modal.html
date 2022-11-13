@@ -1,0 +1,46 @@
+<!--
+1) pops-up modal
+2) darkens picture, shows caption and runs timer in the background
+-->
+
+<div class="main-window" id="main-window">
+    <script>document.getElementById("show-modal").click();</script>
+
+    <!--upper section-->
+    <div class="caption-wrapper text-center">
+        <img class="main-pic" style="filter: brightness(15%)" src="{{ pic1 }}"
+             hx-get="/check_answer/1"
+             hx-trigger="click"
+             hx-target="#main-window"
+             hx-swap="outerHTML">
+        <div id="caption1" class="caption">
+            <p>{{ caption1|safe }}</p>
+        </div>
+    </div>
+
+    <!--timer section-->
+    <div class="progress timer-section">
+        <div class="progress-bar time-bar" role="progressbar" style="width: 100%" id="time-bar"
+             hx-get="/timer-animation" hx-trigger="revealed" hx-target="#time-bar" hx-swap="outerHTML">
+        </div>
+    </div>
+
+    <!--lower section-->
+    <div class="caption-wrapper text-center">
+        <img class="main-pic" style="filter: brightness(15%)" src="{{pic2}}"
+             hx-get="/check_answer/2"
+             hx-trigger="click"
+             hx-target="#main-window"
+             hx-swap="outerHTML">
+        <div class="caption">
+            <p>{{ caption2|safe }}</p>
+        </div>
+    </div>
+
+    <!--score section-->
+    <div class="score-section">
+        <p class="current-score">Your score: <span>{{ score }}</span></p>
+    </div>
+</div>
+'
+<button hidden type="button" id="show-modal" onclick="javascript:show_modal()">script trigger</button>

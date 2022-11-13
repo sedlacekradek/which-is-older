@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% include "header.html" %}
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        {% include "modal.html" %}
+
+        {% include "menu.html" %}
+
+        <!--main section-->
+        <div class="main-window" id="main-window" hx-get="/change-pics" hx-trigger="revealed" hx-swap="outerHTML">
+
+            <!--upper section-->
+            <div class="caption-wrapper text-center">
+
+                 <img class="main-pic " src=""
+                hx-get="/check_answer/1"
+                hx-trigger="click"
+                hx-target="#main-window"
+                hx-swap="outerHTML">
+
+                <div class="caption">
+                    <p></p>
+                </div>
+            </div>
+
+            <!--timer section-->
+            <div class="progress timer-section">
+                <div class="progress-bar time-bar" role="progressbar" style="width: 100%">
+                </div>
+            </div>
+
+            <!--lower section-->
+            <div class="caption-wrapper text-center">
+
+                 <img class="main-pic " src=""
+                hx-get="/check_answer/2"
+                hx-trigger="click"
+                hx-target="#main-window"
+                hx-swap="outerHTML">
+
+                <div class="caption">
+                    <p></p>
+                </div>
+            </div>
+
+            <!--score section-->
+            <div class="score-section">
+                <p class="current-score">Your score: <span id="score">score</span></p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% include "scripts.html" %}
+
+</body>
+</html>

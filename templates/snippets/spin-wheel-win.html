@@ -1,0 +1,37 @@
+<!--
+1) starts spinning animation, disables button to spin
+2) shows result message with 6s delay (spinning time)
+3) closes modal with 7.5s delay
+4) triggers change_pics() with 8.5s delay
+-->
+
+<div class="modal-body modal-text" id="modal-body">
+    <div hx-get="/enable-button" hx-trigger="load delay:8.8s" hx-target="#staticBackdrop" hx-swap="outerHTML">
+        <div hx-get="/close_modal"
+             hx-trigger="load delay:7.5s">
+
+        </div>
+        <div hx-get="/change-pics"
+             hx-trigger="load delay:8.5s"
+             hx-target="#main-window"
+             hx-swap="outerHTML">
+            <img src="{{ url_for('static', filename='images/other/wheel.png') }}"
+                 class="wheel" id="wheel"
+                 hx-get="/wheel-animation"
+                 hx-trigger="revealed"
+                 hx-target="#wheel"
+                 hx-swap="outerHTML">
+            <button disabled type="button" class="btn btn-outline-light modal-button">
+                <i class="bi bi-arrow-up-circle-fill"><p>spin me</p></i></button>
+            <hr>
+
+            <!--message with result-->
+            <h1 id="win-message"
+                hx-trigger="load delay:6s"
+                hx-swap="outerHTML"
+                hx-target="#win-message"
+                hx-get="/win-message">
+            </h1>
+        </div>
+    </div>
+</div>
